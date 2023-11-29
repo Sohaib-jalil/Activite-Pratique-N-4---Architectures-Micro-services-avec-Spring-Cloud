@@ -1,0 +1,63 @@
+<div class="container" *ngIf="orderDetails">
+  <div class="row">
+    <div class="col-md-6 mt-2">
+      <div class="card">
+        <div class="card-header">Order ID: {{orderId}}</div>
+        <div class="card-body text-sm-start">
+          <ul class="list-group">
+            <li class="list-group-item">Date: {{orderDetails.createdAt | date: "dd/MM/yyyy"}}</li>
+            <li class="list-group-item">Status: {{orderDetails.status}}</li>
+            <li class="list-group-item">CustomerId: {{orderDetails.customer.id}}</li>
+            <li class="list-group-item">CustomerId: {{orderDetails.customer.name}}</li>
+            <li class="list-group-item">CustomerId: {{orderDetails.customer.email}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-2">
+      <div class="card">
+        <div class="card-header">Product Items</div>
+        <div class="card-body">
+          <table class="table table-sm">
+            <thead>
+            <tr class="bg-dark text-white">
+              <th class="text-center">Product ID</th>
+              <th class="text-center">Product Name</th>
+              <th class="text-center">Quantity</th>
+              <th class="text-center">Price</th>
+              <th class="text-end">Discount</th>
+              <th class="text-end">Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of orderDetails.productItems">
+              <td class="text-center">{{item.product.id}}</td>
+              <td class="text-center">{{item.product.name}}</td>
+              <td class="text-center">{{item.quantity}}</td>
+              <td class="text-center">{{item.price | number: '.2'}}</td>
+              <td class="text-end">{{item.discount | number: '.2'}}</td>
+              <td class="text-end">{{item.amount | number: '.2'}}</td>
+            </tr>
+            <tr class="bg-dark text-white">
+              <td colspan="5" class="text-end">Total</td>
+              <td class="text-end">
+                {{orderDetails.total | number: '.2'}}
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
