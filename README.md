@@ -82,6 +82,8 @@ Packaging : Jar
 - Spring HATEOAS
 - OpenFeign
 
+## Config Repo:
+Git repo: https://github.com/Sohaib-jalil/Activite-Pratique-N-4---Architectures-Micro-services-config-repo
 
 ## Consul Discovery
 ![Screenshot 2023-11-28 202139](https://github.com/Sohaib-jalil/Activite-Pratique-N-4---Architectures-Micro-services-avec-Spring-Cloud/assets/92445933/eebf4e24-a60d-4b82-a021-63552d9e7759)
